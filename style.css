@@ -1,0 +1,543 @@
+/* ==============================
+   SPENDWISE THEME
+   ============================== */
+
+:root {
+    --brand-color: #2563eb;
+    --accent-color: #14b8a6;
+
+    --surface-color: #ffffff;
+    --background-color: #f5f7fb;
+
+    --primary-text: #1e293b;
+    --secondary-text: #64748b;
+
+    --border-color: #e2e8f0;
+    --sidebar-color: #0f172a;
+
+    --success-color: #16a34a;
+}
+
+
+/* ==============================
+   GENERAL STYLING
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-text);
+}
+
+
+/* ==============================
+   MAIN DASHBOARD GRID
+   ============================== */
+
+.dashboard {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 250px 1fr;
+}
+
+
+/* ==============================
+   SIDEBAR
+   ============================== */
+
+.sidebar {
+    background-color: var(--sidebar-color);
+    color: white;
+
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    margin-bottom: 40px;
+}
+
+.logo h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.logo p {
+    margin-top: 6px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+
+/* Sidebar navigation */
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+
+    padding: 13px 15px;
+
+    color: #cbd5e1;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.nav-item:hover {
+    background-color: #1e293b;
+    color: white;
+}
+
+.nav-item.active {
+    background-color: var(--brand-color);
+    color: white;
+}
+
+
+/* Sidebar footer */
+
+.sidebar-footer {
+    margin-top: auto;
+
+    padding: 20px;
+
+    background-color: #1e293b;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sidebar-footer p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.sidebar-footer strong {
+    font-size: 22px;
+}
+
+
+/* ==============================
+   MAIN CONTENT
+   ============================== */
+
+.main-content {
+    min-width: 0;
+}
+
+
+/* ==============================
+   HEADER
+   ============================== */
+
+.header {
+    min-height: 100px;
+
+    padding: 25px 35px;
+
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.header-title h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header-title p {
+    margin: 6px 0 0;
+    color: var(--secondary-text);
+}
+
+
+/* Header right side */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.notification {
+    font-size: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-avatar {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background-color: var(--brand-color);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.profile-info span {
+    font-size: 12px;
+    color: var(--secondary-text);
+}
+
+
+/* ==============================
+   DASHBOARD CONTENT
+   ============================== */
+
+.dashboard-content {
+    padding: 35px;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 21px;
+}
+
+.section-heading p {
+    margin: 5px 0 0;
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+
+/* Period button */
+
+.period-button {
+    padding: 10px 15px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+
+    background-color: var(--surface-color);
+    color: var(--primary-text);
+
+    cursor: pointer;
+}
+
+
+/* ==============================
+   CATEGORY GRID
+   ============================== */
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ==============================
+   CATEGORY CARDS
+   ============================== */
+
+.category-card {
+    padding: 22px;
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+
+/* Card top */
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.category-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 10px;
+
+    background-color: #eff6ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+.status {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background-color: #dcfce7;
+    color: var(--success-color);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status.fixed {
+    background-color: #f1f5f9;
+    color: var(--secondary-text);
+}
+
+.status.savings {
+    background-color: #ccfbf1;
+    color: #0f766e;
+}
+
+
+/* Card information */
+
+.card-info h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.card-info p {
+    margin: 5px 0 0;
+
+    color: var(--secondary-text);
+    font-size: 13px;
+}
+
+
+/* Card amount */
+
+.card-bottom {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+}
+
+.card-bottom strong {
+    font-size: 25px;
+}
+
+.card-bottom span {
+    color: var(--secondary-text);
+    font-size: 12px;
+}
+
+
+/* Progress bar */
+
+.progress {
+    width: 100%;
+    height: 7px;
+
+    background-color: #e2e8f0;
+
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--brand-color);
+}
+
+.progress-bar.food {
+    width: 71%;
+}
+
+.progress-bar.transport {
+    width: 48%;
+}
+
+.progress-bar.rent {
+    width: 100%;
+}
+
+.progress-bar.entertainment {
+    width: 48%;
+}
+
+.progress-bar.savings-bar {
+    width: 100%;
+    background-color: var(--accent-color);
+}
+
+.progress-bar.utilities {
+    width: 73%;
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+   ============================== */
+
+@media (max-width: 1000px) {
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        padding: 20px;
+    }
+
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .dashboard-content {
+        padding: 20px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .header-actions {
+        gap: 10px;
+    }
+
+    .profile-info {
+        display: none;
+    }
+
+    .header-title h1 {
+        font-size: 23px;
+    }
+
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+   ============================== */
+
+@media (max-width: 767px) {
+
+    /* Single-column dashboard layout */
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    /* Sidebar becomes part of the single-column layout */
+    .sidebar {
+        padding: 20px;
+    }
+
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    /* Header */
+    .header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Dashboard content */
+    .dashboard-content {
+        padding: 20px;
+    }
+
+    /* Category cards become one column */
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
