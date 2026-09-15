@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,229 +7,318 @@
 
     <title>SpendWise Dashboard</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="dashboard">
+    <!-- ==============================
+         HEADER
+         ============================== -->
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
+    <header class="header">
 
-            <div class="logo">
-                <h2>SpendWise</h2>
-                <p>Finance Dashboard</p>
+        <div class="brand">
+            <div class="brand-icon">$</div>
+
+            <div>
+                <h1>SpendWise</h1>
+                <p>Smart Budget Dashboard</p>
+            </div>
+        </div>
+
+        <div class="month">
+            <span>Monthly Budget</span>
+            <strong id="budget">$2,500.00</strong>
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+         ============================== -->
+
+    <main class="container">
+
+        <!-- Page Introduction -->
+
+        <section class="intro">
+
+            <div>
+                <span class="eyebrow">PERSONAL FINANCE</span>
+
+                <h2>Track your spending.<br>
+                    Stay in control.</h2>
+
+                <p>
+                    Monitor your expenses, understand your spending habits,
+                    and keep your monthly budget on track.
+                </p>
             </div>
 
-            <nav class="navigation">
-                <a href="#" class="nav-item active">📊 Dashboard</a>
-                <a href="#" class="nav-item">💰 Income</a>
-                <a href="#" class="nav-item">💳 Expenses</a>
-                <a href="#" class="nav-item">🎯 Budgets</a>
-                <a href="#" class="nav-item">📈 Reports</a>
-                <a href="#" class="nav-item">⚙️ Settings</a>
-            </nav>
+        </section>
 
-            <div class="sidebar-footer">
-                <p>Monthly Budget</p>
-                <strong>$2,500</strong>
+
+        <!-- ==============================
+             SUMMARY CARDS
+             ============================== -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <div class="card-label">
+                    <span class="icon budget-icon">$</span>
+                    <span>Monthly Budget</span>
+                </div>
+
+                <h3 id="budget-card">$2,500.00</h3>
+
+                <p>Your planned monthly spending</p>
+
             </div>
 
-        </aside>
 
+            <div class="summary-card">
 
-        <!-- Main Content -->
-        <main class="main-content">
-
-            <!-- Header -->
-            <header class="header">
-
-                <div class="header-title">
-                    <h1>Dashboard</h1>
-                    <p>Welcome back! Here's your financial overview.</p>
+                <div class="card-label">
+                    <span class="icon expense-icon">−</span>
+                    <span>Total Expenses</span>
                 </div>
 
-                <div class="header-actions">
-                    <span class="notification">🔔</span>
+                <h3 id="total-expenses">$1,445.00</h3>
 
-                    <div class="profile">
-                        <div class="profile-avatar">DM</div>
-                        <div class="profile-info">
-                            <strong>Daiman</strong>
-                            <span>Account Owner</span>
-                        </div>
-                    </div>
+                <p>Total money spent this month</p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="card-label">
+                    <span class="icon balance-icon">✓</span>
+                    <span>Remaining Balance</span>
                 </div>
 
-            </header>
+                <h3 id="remaining-balance">$1,055.00</h3>
+
+                <p>Money available for the rest of the month</p>
+
+            </div>
 
 
-            <!-- Dashboard Content -->
-            <section class="dashboard-content">
+            <div class="summary-card">
 
-                <div class="section-heading">
+                <div class="card-label">
+                    <span class="icon savings-icon">+</span>
+                    <span>Savings</span>
+                </div>
+
+                <h3 id="savings">$650.00</h3>
+
+                <p>Your current savings amount</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             BUDGET STATUS
+             ============================== -->
+
+        <section class="status-card">
+
+            <div class="status-icon">✓</div>
+
+            <div>
+                <h3>Budget Status</h3>
+
+                <p id="budget-message">
+                    Good job! You are currently within your budget.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             CONTENT GRID
+             ============================== -->
+
+        <section class="content-grid">
+
+
+            <!-- ==============================
+                 ADD EXPENSE
+                 ============================== -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
                     <div>
-                        <h2>Expense Overview</h2>
-                        <p>Your spending by category this month</p>
+                        <span class="eyebrow">NEW TRANSACTION</span>
+                        <h2>Add an Expense</h2>
                     </div>
 
-                    <button class="period-button">September 2026 ▾</button>
                 </div>
 
 
-                <!-- Category Cards -->
-                <div class="category-grid">
+                <form id="expense-form">
 
-                    <!-- Food -->
-                    <article class="category-card">
-                        <div class="card-top">
-                            <div class="category-icon">🍔</div>
-                            <span class="status">On Track</span>
+                    <div class="form-group">
+
+                        <label for="expense-name">
+                            Expense Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="expense-name"
+                            placeholder="e.g. Groceries"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="expense-amount">
+                            Amount
+                        </label>
+
+                        <div class="amount-input">
+
+                            <span>$</span>
+
+                            <input
+                                type="number"
+                                id="expense-amount"
+                                placeholder="0.00"
+                                min="0.01"
+                                step="0.01"
+                                required
+                            >
+
                         </div>
 
-                        <div class="card-info">
-                            <h3>Food</h3>
-                            <p>Monthly spending</p>
-                        </div>
-
-                        <div class="card-bottom">
-                            <strong>$285</strong>
-                            <span>of $400</span>
-                        </div>
-
-                        <div class="progress">
-                            <div class="progress-bar food"></div>
-                        </div>
-                    </article>
+                    </div>
 
 
-                    <!-- Transport -->
-                    <article class="category-card">
-                        <div class="card-top">
-                            <div class="category-icon">🚗</div>
-                            <span class="status">On Track</span>
-                        </div>
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        + Add Expense
+                    </button>
 
-                        <div class="card-info">
-                            <h3>Transport</h3>
-                            <p>Monthly spending</p>
-                        </div>
+                </form>
 
-                        <div class="card-bottom">
-                            <strong>$120</strong>
-                            <span>of $250</span>
-                        </div>
-
-                        <div class="progress">
-                            <div class="progress-bar transport"></div>
-                        </div>
-                    </article>
+            </div>
 
 
-                    <!-- Rent -->
-                    <article class="category-card">
-                        <div class="card-top">
-                            <div class="category-icon">🏠</div>
-                            <span class="status fixed">Fixed</span>
-                        </div>
+            <!-- ==============================
+                 EXPENSE LIST
+                 ============================== -->
 
-                        <div class="card-info">
-                            <h3>Rent</h3>
-                            <p>Monthly spending</p>
-                        </div>
+            <div class="panel">
 
-                        <div class="card-bottom">
-                            <strong>$800</strong>
-                            <span>of $800</span>
-                        </div>
+                <div class="panel-header">
 
-                        <div class="progress">
-                            <div class="progress-bar rent"></div>
-                        </div>
-                    </article>
+                    <div>
+                        <span class="eyebrow">TRANSACTIONS</span>
+                        <h2>Recent Expenses</h2>
+                    </div>
 
-
-                    <!-- Entertainment -->
-                    <article class="category-card">
-                        <div class="card-top">
-                            <div class="category-icon">🎮</div>
-                            <span class="status">On Track</span>
-                        </div>
-
-                        <div class="card-info">
-                            <h3>Entertainment</h3>
-                            <p>Monthly spending</p>
-                        </div>
-
-                        <div class="card-bottom">
-                            <strong>$95</strong>
-                            <span>of $200</span>
-                        </div>
-
-                        <div class="progress">
-                            <div class="progress-bar entertainment"></div>
-                        </div>
-                    </article>
-
-
-                    <!-- Savings -->
-                    <article class="category-card">
-                        <div class="card-top">
-                            <div class="category-icon">💰</div>
-                            <span class="status savings">Excellent</span>
-                        </div>
-
-                        <div class="card-info">
-                            <h3>Savings</h3>
-                            <p>Monthly savings</p>
-                        </div>
-
-                        <div class="card-bottom">
-                            <strong>$650</strong>
-                            <span>of $600</span>
-                        </div>
-
-                        <div class="progress">
-                            <div class="progress-bar savings-bar"></div>
-                        </div>
-                    </article>
-
-
-                    <!-- Utilities -->
-                    <article class="category-card">
-                        <div class="card-top">
-                            <div class="category-icon">💡</div>
-                            <span class="status">On Track</span>
-                        </div>
-
-                        <div class="card-info">
-                            <h3>Utilities</h3>
-                            <p>Monthly spending</p>
-                        </div>
-
-                        <div class="card-bottom">
-                            <strong>$145</strong>
-                            <span>of $200</span>
-                        </div>
-
-                        <div class="progress">
-                            <div class="progress-bar utilities"></div>
-                        </div>
-                    </article>
+                    <span
+                        class="expense-count"
+                        id="expense-count"
+                    >
+                        5 expenses
+                    </span>
 
                 </div>
 
-            </section>
 
-        </main>
+                <div
+                    id="expense-list"
+                    class="expense-list"
+                >
+                    <!-- JavaScript will display expenses here -->
+                </div>
 
-    </div>
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             SPENDING OVERVIEW
+             ============================== -->
+
+        <section class="overview">
+
+            <div class="overview-header">
+
+                <div>
+                    <span class="eyebrow">OVERVIEW</span>
+
+                    <h2>Spending Summary</h2>
+                </div>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div class="progress-info">
+
+                    <span>Budget Used</span>
+
+                    <strong id="budget-percentage">
+                        57.8%
+                    </strong>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        id="progress"
+                        class="progress"
+                        style="width: 57.8%;"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+         ============================== -->
+
+    <footer>
+
+        <p>
+            SpendWise &copy; 2026 —
+            Simple budgeting for smarter spending.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
     <script src="script.js"></script>
 
 </body>
 </html>
+
