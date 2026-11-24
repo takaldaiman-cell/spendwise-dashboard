@@ -1,137 +1,32 @@
-# SpendWise Dashboard Shell
+# SpendWise — Personal Budget & Expense Manager
 
-## Project Overview
-
-SpendWise is a responsive finance dashboard shell designed to provide users with a clear visual overview of their monthly spending and savings.
-
-The project focuses on creating a professional dashboard layout using **HTML and CSS**, with CSS Grid and Flexbox used to organize the interface.
-
-## Features
-
-* Responsive dashboard layout
-* Sidebar navigation menu
-* Dashboard header with user profile
-* Expense overview section
-* Six spending categories:
-
-  * Food
-  * Transport
-  * Rent
-  * Entertainment
-  * Savings
-  * Utilities
-* Progress bars for spending categories
-* Hover and keyboard focus micro-interactions
-* Responsive layout for screens below 768px
-* Dark theme support using CSS custom properties
-* Google Fonts integration using Inter
+## Project Description
+SpendWise is an interactive personal budgeting web application built with HTML, CSS, and vanilla JavaScript. Users can switch between dedicated workspace views (**Overview**, **Monthly Budget**, **Add Expense**, and **Expense History**), set a monthly spending limit, log and filter expenses by category, and monitor real-time budget feedback and category breakdowns.
 
 ## Technologies Used
+* **Frontend:** HTML5, CSS3, Vanilla JavaScript
+* **Version Control:** Git & GitHub
+* **Hosting & CI/CD:** Netlify
 
-* HTML5
-* CSS3
-* CSS Grid
-* Flexbox
-* CSS Custom Properties
-* Media Queries
-* Google Fonts
+## GitHub Repository Information
+* **Repository URL:** [https://github.com](https://github.com)
+* **Visibility:** Public
+* **Branch:** `main`
 
-## Project Structure
+## Live Netlify Website URL
+* **Live Application:** [https://netlify.app](https://netlify.app)
 
-```text
-SpendWise/
-│
-├── index.html
-├── style.css
-└── README.md
-```
+## Deployment Process Summary
+1. **Deployment Readiness:** Checked that `index.html`, `style.css`, and `script.js` were organized in the root folder with relative paths.
+2. **GitHub Repository:** Created a public GitHub repository (`spendwise-app`) and uploaded the project files.
+3. **Netlify Hosting & Custom Domain:** Connected the GitHub repository to Netlify, deployed the website, and renamed the subdomain to `spendwise-apptracker.netlify.app`.
+4. **Continuous Deployment Test:** Edited `index.html` on GitHub and confirmed Netlify automatically updated the live website.
+5. **Final Testing:** Tested all buttons, budget calculations, and category filters on the live link.
 
-## Layout
+## Challenges Encountered During Deployment
+* **Connecting GitHub for Auto-Deploy:** Initially explored preview mode before linking the GitHub repository directly so every change pushed to `main` deploys automatically.
+* **Managing State Across Views:** Used JavaScript arrays, `event.preventDefault()`, and event delegation so forms and delete buttons work smoothly without reloading the page.
 
-The dashboard uses **CSS Grid** for the main page structure.
-
-The layout contains:
-
-1. Sidebar
-2. Main content area
-3. Header
-4. Expense overview
-5. Category cards
-
-Flexbox is used inside the sidebar, header, navigation items, and category cards.
-
-## Responsive Design
-
-The dashboard becomes a single-column layout on screens smaller than **768px**.
-
-A CSS media query is used:
-
-```css
-@media (max-width: 767px) {
-    .dashboard {
-        grid-template-columns: 1fr;
-    }
-
-    .category-grid {
-        grid-template-columns: 1fr;
-    }
-}
-```
-
-The layout can be tested using Chrome DevTools Device Toolbar.
-
-## Micro-Interactions
-
-The category cards include a subtle hover and keyboard focus animation.
-
-```css
-.category-card {
-    transition: transform 200ms ease, box-shadow 200ms ease;
-}
-
-.category-card:hover,
-.category-card:focus {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
-}
-```
-
-The animation lasts **200ms**, keeping it below the required 250ms limit.
-
-## Theme Variables
-
-The project uses CSS custom properties to control the main theme colors.
-
-```css
-:root {
-    --brand-color: #2563eb;
-    --accent-color: #14b8a6;
-    --surface-color: #ffffff;
-    --background-color: #f5f7fb;
-    --primary-text: #1e293b;
-    --secondary-text: #64748b;
-}
-```
-
-A dark theme can also be applied using:
-
-```css
-@media (prefers-color-scheme: dark) {
-    :root {
-        --brand-color: #60a5fa;
-        --accent-color: #2dd4bf;
-        --surface-color: #1e293b;
-        --background-color: #0f172a;
-        --primary-text: #f8fafc;
-        --secondary-text: #94a3b8;
-    }
-}
-```
-
-## Purpose
-
-The purpose of this project is to demonstrate practical use of **CSS Grid, Flexbox, responsive design, CSS variables, and interactive styling** while creating a realistic finance dashboard interface.
-
-## Conclusion
-
-SpendWise provides a clean and responsive dashboard shell that can later be connected to real financial data and JavaScript functionality.
+## Lessons Learned
+* Learned how to publish a local web project to the internet using GitHub and Netlify.
+* Understood how continuous deployment automatically updates a live website whenever changes are saved to GitHub.
